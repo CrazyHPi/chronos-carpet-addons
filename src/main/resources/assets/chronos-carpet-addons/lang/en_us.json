@@ -34,6 +34,10 @@
   "carpet.rule.playerSit.desc": "The player will sit down after 3 sneaks in quick succession.",
   "carpet.rule.playerSit.extra0": "Taken from plusls carped addons.",
 
+  "carpet.rule.squareViewDistance.desc": "Makes the view distance a square like 1.17 and below",
+  "carpet.rule.squareViewDistance.extra0": "Also needs to be installed on the client",
+  "carpet.rule.squareViewDistance.extra1": "You should probably have fog disabled",
+
   "carpet.rule.totalScore.desc": "Display total score on the sidebar.",
   "carpet.rule.totalScore.extra.0": "Taken from johan's carpet addons.",
 

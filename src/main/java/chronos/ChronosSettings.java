@@ -44,6 +44,9 @@ public class ChronosSettings
     @Rule(categories = { CHRONOS })
     public static boolean playerSit = false;
 
+    @Rule(categories = { CHRONOS })
+    public static boolean squareViewDistance = false;
+
     @Rule(categories = { SURVIVAL, COMMAND, CHRONOS })
     public static boolean totalScore = false;
 
