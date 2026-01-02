@@ -13,9 +13,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Entity.class)
 public class EntityMixin {
 
-    @Inject(method = "queueBlockCollisionCheck", at = @At("HEAD"), cancellable = true)
-    private void shithead(Vec3d vec3, Vec3d vec32, CallbackInfo ci) {
-        if (ChronosSettings.noClipCollisionFix && (Entity)(Object)this instanceof PlayerEntity playerEntity && (playerEntity.isSpectator() || (CarpetSettings.creativeNoClip && playerEntity.getAbilities().flying)))
+    @Inject(method = "tickBlockCollision()V", at = @At("HEAD"), cancellable = true)
+    private void shithead(CallbackInfo ci) {
+        if (ChronosSettings.noClipCollisionFix
+                && (Entity)(Object)this instanceof PlayerEntity playerEntity
+                && (playerEntity.isSpectator()
+                || (CarpetSettings.creativeNoClip && playerEntity.getAbilities().flying)))
             ci.cancel();
     }
 }
