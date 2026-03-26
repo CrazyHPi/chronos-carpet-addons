@@ -31,7 +31,14 @@ public abstract class PlayerEntityMixin implements EntityAccessorMixin {
     @Shadow
     public abstract SoundCategory getSoundCategory();
 
-    @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;handleAttack(Lnet/minecraft/entity/Entity;)Z", shift = At.Shift.BY, by = -2), cancellable = true)
+    @Inject(
+            method = "attack",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/entity/player/PlayerEntity;isUsingRiptide()Z"
+            ),
+            cancellable = true
+    )
     public void creativeKill(Entity target, CallbackInfo ci) {
         if (ChronosSettings.creativeOneHitKill
                 && !this.accessorGetWorld().isClient() // this is to prevent a bug with ender dragons
